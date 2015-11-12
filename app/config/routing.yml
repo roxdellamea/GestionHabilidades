@@ -1,3 +1,7 @@
+gestion_habilidades:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

@@ -1,0 +1,3 @@
+gestion_habilidades_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: GestionHabilidadesBundle:Default:index }

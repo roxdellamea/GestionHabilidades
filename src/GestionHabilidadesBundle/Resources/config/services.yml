@@ -1,0 +1,4 @@
+services:
+#    gestion_habilidades.example:
+#        class: GestionHabilidadesBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
