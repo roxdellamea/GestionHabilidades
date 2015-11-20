@@ -1,17 +1,16 @@
 <?php
 
 namespace GestionHabilidadesBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Proyecto
+ * Tecnologia
  *
- * @ORM\Table(name="proyectos")
- * @ORM\Entity(repositoryClass="GestionHabilidadesBundle\Entity\ProyectoRepository")
+ * @ORM\Table(name="tecnologias")
+ * @ORM\Entity(repositoryClass="GestionHabilidadesBundle\Entity\TecnologiaRepository")
  */
-class Proyecto
+class Tecnologia
 {
     /**
      * @var integer
@@ -25,26 +24,30 @@ class Proyecto
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255)
+     * @ORM\Column(name="nombre", type="string", length=100)
      */
     private $nombre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="descripcion", type="string", length=255)
-     */
-    private $descripcion;
+
 
     /**
-     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="proyecto")
+     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="tecnologia")
+     */
+    protected $califtecnologia;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="tecnologia")
      */
     protected $requerido;
 
-    public function __construct()
+     public function __construct()
     {
+        $this->califtecnologia = new ArrayCollection();
         $this->requerido = new ArrayCollection();
     }
+
+
+
 
 
 
@@ -63,7 +66,7 @@ class Proyecto
      *
      * @param string $nombre
      *
-     * @return Proyecto
+     * @return Tecnologias
      */
     public function setNombre($nombre)
     {
@@ -83,36 +86,45 @@ class Proyecto
     }
 
     /**
-     * Set descripcion
+     * Add califtecnologia
      *
-     * @param string $descripcion
+     * @param \GestionHabilidadesBundle\Entity\Califcompetencia $califtecnologia
      *
-     * @return Proyecto
+     * @return Tecnologia
      */
-    public function setDescripcion($descripcion)
+    public function addCaliftecnologia(\GestionHabilidadesBundle\Entity\Califcompetencia $califtecnologia)
     {
-        $this->descripcion = $descripcion;
+        $this->califtecnologia[] = $califtecnologia;
 
         return $this;
     }
 
     /**
-     * Get descripcion
+     * Remove califtecnologia
      *
-     * @return string
+     * @param \GestionHabilidadesBundle\Entity\Califcompetencia $califtecnologia
      */
-    public function getDescripcion()
+    public function removeCaliftecnologia(\GestionHabilidadesBundle\Entity\Califcompetencia $califtecnologia)
     {
-        return $this->descripcion;
+        $this->califtecnologia->removeElement($califtecnologia);
     }
 
-  
+    /**
+     * Get califtecnologia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCaliftecnologia()
+    {
+        return $this->califtecnologia;
+    }
+
     /**
      * Add requerido
      *
      * @param \GestionHabilidadesBundle\Entity\Requerido $requerido
      *
-     * @return Proyecto
+     * @return Tecnologia
      */
     public function addRequerido(\GestionHabilidadesBundle\Entity\Requerido $requerido)
     {

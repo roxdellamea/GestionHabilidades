@@ -1,7 +1,7 @@
 <?php
 
 namespace GestionHabilidadesBundle\Entity;
-
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -62,6 +62,24 @@ class Profesional
      * @ORM\Column(name="linkedin", type="string", length=100)
      */
     private $linkedin;
+
+
+     /**
+     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="dni")
+     */
+    protected $califcompetencia;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Califtecnologia", mappedBy="dni")
+     */
+    protected $califtecnologia;
+
+    public function __construct()
+    {
+        $this->califcompetencia = new ArrayCollection();
+        $this->califtecnologia = new ArrayCollection();
+    }
+
 
 
     /**
@@ -217,5 +235,72 @@ class Profesional
     {
         return $this->linkedin;
     }
-}
 
+    /**
+     * Add califcompetencia
+     *
+     * @param \GestionHabilidadesBundle\Entity\Califcompetencia $califcompetencia
+     *
+     * @return Profesional
+     */
+    public function addCalifcompetencia(\GestionHabilidadesBundle\Entity\Califcompetencia $califcompetencia)
+    {
+        $this->califcompetencia[] = $califcompetencia;
+
+        return $this;
+    }
+
+    /**
+     * Remove califcompetencia
+     *
+     * @param \GestionHabilidadesBundle\Entity\Califcompetencia $califcompetencia
+     */
+    public function removeCalifcompetencia(\GestionHabilidadesBundle\Entity\Califcompetencia $califcompetencia)
+    {
+        $this->califcompetencia->removeElement($califcompetencia);
+    }
+
+    /**
+     * Get califcompetencia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCalifcompetencia()
+    {
+        return $this->califcompetencia;
+    }
+
+    /**
+     * Add califtecnologia
+     *
+     * @param \GestionHabilidadesBundle\Entity\Califtecnologia $califtecnologia
+     *
+     * @return Profesional
+     */
+    public function addCaliftecnologia(\GestionHabilidadesBundle\Entity\Califtecnologia $califtecnologia)
+    {
+        $this->califtecnologia[] = $califtecnologia;
+
+        return $this;
+    }
+
+    /**
+     * Remove califtecnologia
+     *
+     * @param \GestionHabilidadesBundle\Entity\Califtecnologia $califtecnologia
+     */
+    public function removeCaliftecnologia(\GestionHabilidadesBundle\Entity\Califtecnologia $califtecnologia)
+    {
+        $this->califtecnologia->removeElement($califtecnologia);
+    }
+
+    /**
+     * Get califtecnologia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCaliftecnologia()
+    {
+        return $this->califtecnologia;
+    }
+}

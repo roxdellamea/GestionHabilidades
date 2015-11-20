@@ -17,10 +17,10 @@ class ProyectoController extends Controller
 
     public function agregarAction()
     {
-        $proyecto = new Proyecto();
-        $form = $this->crearCreateForm($proyecto);
+        //$proyecto = new Proyecto();
+        //$form = $this->crearCreateForm($proyecto);
 
-        return $this->render('GestionHabilidadesBundle:Proyecto:agregar.html.twig', array('form' => $form->createView()));
+        return $this->render('GestionHabilidadesBundle:Proyecto:agregar.html.twig'); //, array('form' => $form->createView()));
     }
 
     private function crearCreateForm(Proyecto $entity)

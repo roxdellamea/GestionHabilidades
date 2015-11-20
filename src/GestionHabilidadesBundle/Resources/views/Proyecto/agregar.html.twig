@@ -1,33 +1,73 @@
 {% extends 'layout.html.twig' %}
 
 {% block body %}
-	<div class="main container">
-		<div class="row well">
-			<div class="page-header">
-				<h2> Nuevo Proyecto </h2>
-			</div>
-				{{ form_start(form, {'attr' : {'nombre' : 'form'} }) }}
-				
-				<div class="form-group">
-					Nombre
-					{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre del Proyecto'} }) }}
-					<span class = "text-danger"> {{ form_errors(form.nombre) }} </span>
-				</div>
-				<div class="form-group">
-					Descripción
-					{{ form_widget(form.descripcion, {'attr' : {'class' : 'form-control', 'placeholder' : 'Descripción'} }) }}
-					<span class = "text-danger"> {{ form_errors(form.descripcion) }} </span>
-				</div>
-				<div class="form-group">
-					Requerimientos
-					{{ form_widget(form.requerimientos, {'attr' : {'class' : 'form-control', 'placeholder' : 'Requerimientos'} }) }}
-					<span class = "text-danger"> {{ form_errors(form.requerimientos) }} </span>
-				</div>
-				
-				<p>{{ form_widget(form.guardar, {'label' : 'Guardar', 'attr' : {'class' : 'btn bt - success' }} ) }} 
-				</p>
-				
-				{{ form_end(form) }}
-		</div>
-	</div>
+	
+</div>
+<div class="container">
+  <form>
+    <div class="checkbox">
+      <div class="row">
+        <div class="col-md-8">
+          <h3>Nombre del proyecto</h3><input type="text" class="form-control" placeholder="Nombre del Proyecto">
+          <h3>Agregar descripcion del proyecto</h3>
+          <textarea class="form-control" rows="9"></textarea>
+          <h3>Puesto: </h3>
+          <label>
+            <input type="checkbox">Desarrollador
+          </label>
+          <label>
+            <input type="checkbox">Tester
+          </label>
+          <label>
+            <input type="checkbox">Analista
+          </label>
+          <label>
+            <input type="checkbox">Soporte
+          </label>
+          <label>
+            <input type="checkbox">Lider de proyecto
+          </label>
+          <br><br>
+        </div>
+
+
+      <div class="col-md-4">
+        <h3>Especializado en: </h3><br>
+        <label>
+          <input type="checkbox">Diseño Web (HTML5, CSS3, Bootstrap, Materialize, JQuery, JavaSript)
+        </label>
+        <label>
+          <input type="checkbox"> PHP
+        </label><br>
+        <label>
+          <input type="checkbox"> .NET
+        </label><br>
+        <label>
+          <input type="checkbox"> Java
+        </label><br>
+        <label>
+          <input type="checkbox"> SQL
+        </label>
+        <br>
+        <h3>Referencia:</h3>
+        <label>
+          <input type="checkbox"> Junior
+        </label><br>
+        <label>
+          <input type="checkbox"> Junior Advance
+        </label><br>
+        <label>
+          <input type="checkbox"> Semi Senior
+        </label><br>
+        <label>
+          <input type="checkbox"> Semi Senior Advance
+        </label><br>
+        <label>
+          <input type="checkbox"> Senior
+        </label><br>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-default">Cargar Proyecto</button>
+  </form>
+</div>
 {% endblock %}

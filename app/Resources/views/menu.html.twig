@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{ path('gh_admin_index') }}">Gestion de Habilidades</a>
+          <a class="navbar-brand" href="{{ path('gh_usuario_index') }}">Gestion de Habilidades</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +17,7 @@
             <li><a href="{{ path('gh_profesional_agregar') }}">Cargar Profesional</a></li>  
             <li><a href="{{ path('gh_proyecto_agregar') }}">Cargar Proyecto</a></li>
           </ul>
-          <form class="navbar-form navbar-left" role="search">
+          <form class="navbar-form navbar-left" role="search" action="{{ path('gh_profesional_ver') }}">
             <div class="form-group">
               <input type="text" class="form-control" placeholder="buscar">
             </div>

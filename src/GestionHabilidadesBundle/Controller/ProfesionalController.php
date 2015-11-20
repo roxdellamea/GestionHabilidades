@@ -15,6 +15,11 @@ class ProfesionalController extends Controller
         return $this->render('GestionHabilidadesBundle:Default:index.html.twig', array('name' => $name));
     }
 
+    public function verAction()
+    {
+        return $this->render('GestionHabilidadesBundle:Profesional:ver.html.twig'); //, array('name' => $name));
+    }
+
     public function agregarAction()
     {
         $profesional = new Profesional();

@@ -10,4 +10,9 @@ class DefaultController extends Controller
     {
         return $this->render('GestionHabilidadesBundle:Default:index.html.twig', array('name' => $name));
     }
+
+    public function loginAction()
+    {
+        return $this->render('GestionHabilidadesBundle:Default:login.html.twig');
+    }
 }

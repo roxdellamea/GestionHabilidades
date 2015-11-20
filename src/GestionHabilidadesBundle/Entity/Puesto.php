@@ -1,17 +1,16 @@
 <?php
 
 namespace GestionHabilidadesBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Proyecto
+ * Puesto
  *
- * @ORM\Table(name="proyectos")
- * @ORM\Entity(repositoryClass="GestionHabilidadesBundle\Entity\ProyectoRepository")
+ * @ORM\Table(name="puestos")
+ * @ORM\Entity(repositoryClass="GestionHabilidadesBundle\Entity\PuestoRepository")
  */
-class Proyecto
+class Puesto
 {
     /**
      * @var integer
@@ -25,19 +24,14 @@ class Proyecto
     /**
      * @var string
      *
-     * @ORM\Column(name="nombre", type="string", length=255)
+     * @ORM\Column(name="nombre", type="string", length=100)
      */
     private $nombre;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="descripcion", type="string", length=255)
-     */
-    private $descripcion;
+
 
     /**
-     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="proyecto")
+     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="puesto")
      */
     protected $requerido;
 
@@ -63,7 +57,7 @@ class Proyecto
      *
      * @param string $nombre
      *
-     * @return Proyecto
+     * @return Puestos
      */
     public function setNombre($nombre)
     {
@@ -83,36 +77,11 @@ class Proyecto
     }
 
     /**
-     * Set descripcion
-     *
-     * @param string $descripcion
-     *
-     * @return Proyecto
-     */
-    public function setDescripcion($descripcion)
-    {
-        $this->descripcion = $descripcion;
-
-        return $this;
-    }
-
-    /**
-     * Get descripcion
-     *
-     * @return string
-     */
-    public function getDescripcion()
-    {
-        return $this->descripcion;
-    }
-
-  
-    /**
      * Add requerido
      *
      * @param \GestionHabilidadesBundle\Entity\Requerido $requerido
      *
-     * @return Proyecto
+     * @return Puesto
      */
     public function addRequerido(\GestionHabilidadesBundle\Entity\Requerido $requerido)
     {
