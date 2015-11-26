@@ -1,0 +1,34 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <div class="main container">
+        <div class="row well">
+            <div class="page-header">
+                <h2> Calificar Profecional </h2>
+            </div>
+                
+                {{ form_start(form) }}
+                
+                <div class="form-group">
+                    Mes
+                    {{ form_widget(form.mes, {'attr' : {'class' : 'form-control', 'placeholder' : 'Mes'} }) }}
+                    <span class = "text-danger"> {{ form_errors(form.mes) }} </span>
+                </div>
+                <div class="form-group">
+                    Nota
+                    {{ form_widget(form.nota, {'attr' : {'class' : 'form-control', 'placeholder' : 'Nota'} }) }}
+                    <span class = "text-danger"> {{ form_errors(form.nota) }} </span>
+                </div>
+                <div class="form-group">
+                    Actividades
+                    {{ form_widget(form.actividad, {'attr' : {'class' : 'form-control', 'placeholder' : 'Actividades'} }) }}
+                    <span class = "text-danger"> {{ form_errors(form.actividad) }} </span>
+                </div>
+                
+                <p>{{ form_widget(form.guardar, {'label' : 'Guardar', 'attr' : {'class' : 'btn bt - success' }} ) }} 
+                </p>
+                
+                {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

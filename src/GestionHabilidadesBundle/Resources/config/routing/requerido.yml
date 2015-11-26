@@ -1,0 +1,30 @@
+requerido:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:index" }
+
+requerido_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:show" }
+
+requerido_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:new" }
+
+requerido_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:create" }
+    methods:  POST
+
+requerido_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:edit" }
+
+requerido_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:update" }
+    methods:  [POST, PUT]
+
+requerido_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Requerido:delete" }
+    methods:  [POST, DELETE]

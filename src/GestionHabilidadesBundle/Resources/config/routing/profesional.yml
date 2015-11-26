@@ -1,0 +1,30 @@
+profesional:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:index" }
+
+profesional_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:show" }
+
+profesional_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:new" }
+
+profesional_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:create" }
+    methods:  POST
+
+profesional_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:edit" }
+
+profesional_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:update" }
+    methods:  [POST, PUT]
+
+profesional_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Profesional:delete" }
+    methods:  [POST, DELETE]

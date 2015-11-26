@@ -1,5 +1,8 @@
 {% extends 'layout.html.twig' %}
 
+
+
+
 {% block body %}
 	<div class="main container">
 		<div class="row well">
@@ -38,6 +41,16 @@
 					{{ form_widget(form.linkedin, {'attr' : {'class' : 'form-control', 'placeholder' : 'Linkedin'} }) }}
 					<span class = "text-danger"> {{ form_errors(form.linkedin) }} </span>
 				</div>
+				<div class="form-group">
+					<br></br>
+				</div>
+				<div class="form-group">
+					Calificacion
+					{{ form_widget(form.califcompetencia) }}
+					<span class = "text-danger"> {{ form_errors(form.califcompetencia) }} </span>
+				</div>
+				<br></br><br></br><br></br>
+
 				<p>{{ form_widget(form.guardar, {'label' : 'Guardar', 'attr' : {'class' : 'btn bt - success' }} ) }} 
 				</p>
 				

@@ -2,6 +2,7 @@
 
 namespace GestionHabilidadesBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -30,7 +31,7 @@ class Competencia
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="competencia")
+     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="competencia", cascade={"persist", "remove"})
      */
     protected $califcompetencia;
 
@@ -39,6 +40,10 @@ class Competencia
         $this->califcompetencia = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return strval($this->nombre);
+    }
 
     /**
      * Get id

@@ -18,10 +18,9 @@ class ProfesionalType extends AbstractType
             ->add('nombre')
             ->add('apellido')
             ->add('dni')
-            ->add('email','email')
+            ->add('email')
             ->add('telefono')
             ->add('linkedin')
-            ->add('guardar','submit',array('label' => 'Guardar'));
         ;
     }
     
@@ -40,6 +39,6 @@ class ProfesionalType extends AbstractType
      */
     public function getName()
     {
-        return 'profesional';
+        return 'gestionhabilidadesbundle_profesional';
     }
 }

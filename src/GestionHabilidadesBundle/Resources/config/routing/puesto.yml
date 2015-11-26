@@ -1,0 +1,30 @@
+puesto:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:index" }
+
+puesto_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:show" }
+
+puesto_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:new" }
+
+puesto_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:create" }
+    methods:  POST
+
+puesto_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:edit" }
+
+puesto_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:update" }
+    methods:  [POST, PUT]
+
+puesto_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Puesto:delete" }
+    methods:  [POST, DELETE]

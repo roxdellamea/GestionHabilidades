@@ -1,0 +1,47 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="margin-none">
+                <h1>Profesionales</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Dni</th>
+                            <th>Email</th>
+                            <th>Telefono</th>
+                            <th>Linkedin</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('profesional_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>{{ entity.nombre }}</td>
+                            <td>{{ entity.apellido }}</td>
+                            <td>{{ entity.dni }}</td>
+                            <td>{{ entity.email }}</td>
+                            <td>{{ entity.telefono }}</td>
+                            <td>{{ entity.linkedin }}</td>
+                            <td>
+                                <a href="{{ path('profesional_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                                <a href="{{ path('profesional_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{{ path('profesional_new') }}" class="btn btn-primary">Agregar</a>
+                
+            </div>
+        </div>
+    </div>
+    {% endblock %}

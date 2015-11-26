@@ -1,8 +1,8 @@
 <?php
 
 namespace GestionHabilidadesBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -37,7 +37,7 @@ class Proyecto
     private $descripcion;
 
     /**
-     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="proyecto")
+     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="proyecto", cascade={"persist", "remove"})
      */
     protected $requerido;
 
@@ -47,7 +47,11 @@ class Proyecto
     }
 
 
-
+    public function __toString()
+    {
+        return strval($this->nombre);
+    }
+    
     /**
      * Get id
      *

@@ -1,0 +1,48 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <div class="">
+        <div class="col-md-12">
+            <div class="margin-none">
+                <h1>Meses</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Mes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('mes_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>{{ entity.mes }}</td>
+                            <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('mes_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('mes_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
+                                </li>
+                            </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li>
+                        <a href="{{ path('mes_new') }}">
+                            Create a new entry
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

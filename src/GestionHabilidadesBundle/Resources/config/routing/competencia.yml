@@ -1,0 +1,30 @@
+competencia:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:index" }
+
+competencia_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:show" }
+
+competencia_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:new" }
+
+competencia_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:create" }
+    methods:  POST
+
+competencia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:edit" }
+
+competencia_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:update" }
+    methods:  [POST, PUT]
+
+competencia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Competencia:delete" }
+    methods:  [POST, DELETE]

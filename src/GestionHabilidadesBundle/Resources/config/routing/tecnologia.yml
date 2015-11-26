@@ -1,0 +1,30 @@
+tecnologia:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:index" }
+
+tecnologia_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:show" }
+
+tecnologia_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:new" }
+
+tecnologia_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:create" }
+    methods:  POST
+
+tecnologia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:edit" }
+
+tecnologia_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:update" }
+    methods:  [POST, PUT]
+
+tecnologia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Tecnologia:delete" }
+    methods:  [POST, DELETE]

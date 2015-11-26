@@ -28,9 +28,7 @@ class Califtecnologia
      */
     private $nivel;
 
-
-
-     /**
+    /**
      * @ORM\ManyToOne(targetEntity="Mes", inversedBy="califtecnologia")
      * @ORM\JoinColumn(name="mes_id", referencedColumnName="id")
      */
@@ -41,7 +39,6 @@ class Califtecnologia
      * @ORM\JoinColumn(name="dni_id", referencedColumnName="id")
      */
     protected $dni;
-
 
     /**
      * @ORM\ManyToOne(targetEntity="Tecnologia", inversedBy="califtecnologia")

@@ -5,6 +5,7 @@ namespace GestionHabilidadesBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use GestionHabilidadesBundle\Form\RequeridoType;
 
 class ProyectoType extends AbstractType
 {
@@ -17,8 +18,14 @@ class ProyectoType extends AbstractType
         $builder
             ->add('nombre')
             ->add('descripcion')
-            ->add('requerimientos')
-            ->add('guardar','submit', array('label' => 'Guardar'))
+            /*->add('requerido', 'collection', array(
+                'type' => new RequeridoType(),
+                'allow_add' => true,
+                'allow_delete' => true,
+                'prototype' => true,
+                'by_reference' => false,
+            ))
+            */
         ;
     }
     
@@ -37,6 +44,6 @@ class ProyectoType extends AbstractType
      */
     public function getName()
     {
-        return 'proyecto';
+        return 'gestionhabilidadesbundle_proyecto';
     }
 }

@@ -1,0 +1,42 @@
+{% extends '::layout.html.twig' %}
+
+
+{% block body %}
+
+
+<div class="container">
+	<div class="col-md-12">
+        <div class="margin-none">
+            <h2> Nuevo Proyecto </h2>
+        </div>	
+    
+		{{ form_start(form) }}
+			<div class="form-group">
+				Nombre
+				{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre'} }) }}
+				<span class = "text-danger"> {{ form_errors(form.nombre) }} </span>
+			</div>
+			<div class="form-group">
+					Descripción
+					{{ form_widget(form.descripcion, {'attr' : {'class' : 'form-control', 'placeholder' : 'Descripción del proyecto'} }) }}
+					<span class = "text-danger"> {{ form_errors(form.descripcion) }} </span>
+			</div>
+				
+			<p>{{ form_widget(form.submit, {'label' : 'Guardar', 'attr' : {'class' : 'btn btn-success' }} ) }} 
+				<a href="{{ path('proyecto') }}" class="btn btn-info">
+	            Back to the list
+	    		</a>
+			</p>
+
+		{{ form_end(form) }}
+	    
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

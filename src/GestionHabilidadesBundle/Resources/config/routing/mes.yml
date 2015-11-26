@@ -1,0 +1,30 @@
+mes:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:index" }
+
+mes_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:show" }
+
+mes_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:new" }
+
+mes_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:create" }
+    methods:  POST
+
+mes_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:edit" }
+
+mes_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:update" }
+    methods:  [POST, PUT]
+
+mes_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Mes:delete" }
+    methods:  [POST, DELETE]

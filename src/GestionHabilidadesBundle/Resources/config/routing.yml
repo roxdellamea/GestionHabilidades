@@ -1,3 +1,39 @@
+gestion_habilidades_requerido:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/requerido.yml"
+    prefix:   /requerido
+
+gestion_habilidades_puesto:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/puesto.yml"
+    prefix:   /puesto
+
+gestion_habilidades_califtecnologia:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/califtecnologia.yml"
+    prefix:   /califtecnologia
+
+gestion_habilidades_califcompetencia:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/califcompetencia.yml"
+    prefix:   /califcompetencia
+
+gestion_habilidades_proyecto:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/proyecto.yml"
+    prefix:   /proyecto
+
+gestion_habilidades_profesional:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/profesional.yml"
+    prefix:   /profesional
+
+gestion_habilidades_tecnologia:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/tecnologia.yml"
+    prefix:   /tecnologia
+
+gestion_habilidades_competencia:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/competencia.yml"
+    prefix:   /competencia
+
+gestion_habilidades_mes:
+    resource: "@GestionHabilidadesBundle/Resources/config/routing/mes.yml"
+    prefix:   /mes
+
 gh_default_login:
     path:     /login/
     defaults: { _controller: GestionHabilidadesBundle:Default:login }
@@ -27,3 +63,16 @@ gh_proyecto_crear:
     path:   /proyecto/crear/
     defaults: { _controller: GestionHabilidadesBundle:Proyecto:crear }
     methods: POST
+
+gh_califcompetencia_agregar:
+    path:   /califcompetencia/agregar/
+    defaults: { _controller: GestionHabilidadesBundle:Califcompetencia:agregar }
+
+gh_califcompetencia_crear:
+    path:   /califcompetencia/crear/
+    defaults: { _controller: GestionHabilidadesBundle:Califcompetencia:crear }
+    methods: POST
+
+gh_search:
+    path:   /search/
+    defaults: { _controller: GestionHabilidadesBundle:Profesional:search }

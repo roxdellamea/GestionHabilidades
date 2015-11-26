@@ -65,12 +65,12 @@ class Profesional
 
 
      /**
-     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="dni")
+     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="dni", cascade={"persist", "remove"})
      */
     protected $califcompetencia;
 
     /**
-     * @ORM\OneToMany(targetEntity="Califtecnologia", mappedBy="dni")
+     * @ORM\OneToMany(targetEntity="Califtecnologia", mappedBy="dni", cascade={"persist", "remove"})
      */
     protected $califtecnologia;
 
@@ -80,6 +80,10 @@ class Profesional
         $this->califtecnologia = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return strval($this->nombre);
+    }
 
 
     /**

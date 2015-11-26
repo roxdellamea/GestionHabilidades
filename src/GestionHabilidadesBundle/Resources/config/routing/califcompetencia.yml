@@ -1,0 +1,30 @@
+califcompetencia:
+    path:     /
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:index" }
+
+califcompetencia_show:
+    path:     /{id}/show
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:show" }
+
+califcompetencia_new:
+    path:     /new
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:new" }
+
+califcompetencia_create:
+    path:     /create
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:create" }
+    methods:  POST
+
+califcompetencia_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:edit" }
+
+califcompetencia_update:
+    path:     /{id}/update
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:update" }
+    methods:  [POST, PUT]
+
+califcompetencia_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "GestionHabilidadesBundle:Califcompetencia:delete" }
+    methods:  [POST, DELETE]

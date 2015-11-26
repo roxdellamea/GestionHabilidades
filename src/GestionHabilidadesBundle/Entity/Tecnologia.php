@@ -2,6 +2,7 @@
 
 namespace GestionHabilidadesBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,12 +32,12 @@ class Tecnologia
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="tecnologia")
+     * @ORM\OneToMany(targetEntity="Califcompetencia", mappedBy="tecnologia", cascade={"persist", "remove"})
      */
     protected $califtecnologia;
 
     /**
-     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="tecnologia")
+     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="tecnologia", cascade={"persist", "remove"})
      */
     protected $requerido;
 
@@ -46,6 +47,10 @@ class Tecnologia
         $this->requerido = new ArrayCollection();
     }
 
+    public function __toString()
+    {
+        return strval($this->nombre);
+    }
 
 
 

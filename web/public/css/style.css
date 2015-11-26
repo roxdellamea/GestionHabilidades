@@ -1,5 +1,5 @@
 body{
-	    margin: 0px;
+	margin: 0px;
 }
 .margin{
 	margin-top:5px; 
@@ -9,4 +9,8 @@ body{
 }
 .fondo{
 	background-color: #FFC8C8;
+}
+.neg{
+	color: black;
+	size:16px;
 }

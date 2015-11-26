@@ -1,0 +1,50 @@
+{% extends '::layout.html.twig' %}
+
+{% block body -%}
+    <div class="">
+        <div class="col-md-12">
+            <div class="margin-none">
+                <h1>Calificación de Competencias</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Mes</th>
+                            <th>Profesional</th>
+                            <th>Nota</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td>{{ entity.mes }}</a></td>
+                            <td>{{ entity.dni }}</td>
+                            <td>{{ entity.nota }}</td>
+                            <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('califcompetencia_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('califcompetencia_edit', { 'id': entity.id }) }}" >edit</a>
+                                </li>
+                            </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li>
+                        <a href="{{ path('califcompetencia_new') }}">
+                            Create a new entry
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}

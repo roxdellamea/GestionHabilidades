@@ -2,6 +2,7 @@
 
 namespace GestionHabilidadesBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,7 +32,7 @@ class Puesto
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="puesto")
+     * @ORM\OneToMany(targetEntity="Requerido", mappedBy="puesto", cascade={"persist", "remove"})
      */
     protected $requerido;
 
@@ -40,7 +41,10 @@ class Puesto
         $this->requerido = new ArrayCollection();
     }
 
-
+    public function __toString()
+    {
+        return strval($this->nombre);
+    }
 
     /**
      * Get id

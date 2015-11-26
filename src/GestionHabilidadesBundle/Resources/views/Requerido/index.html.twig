@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Requerido list</h1>
+
+    <div class="">
+        <div class="col-md-12">
+            <div class="margin-none">
+                <h1>Proyecto list</h1>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            <td><a href="{{ path('requerido_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td>
+                            <ul>
+                                <li>
+                                    <a href="{{ path('requerido_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                                </li>
+                                <li>
+                                    <a href="{{ path('requerido_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
+                                </li>
+                            </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+
+                <ul>
+                    <li>
+                        <a href="{{ path('requerido_new') }}">
+                            Create a new entry
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
