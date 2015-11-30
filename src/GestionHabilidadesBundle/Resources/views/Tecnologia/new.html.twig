@@ -2,19 +2,29 @@
 
 {% block body -%}
 <div class="container">
+<<<<<<< HEAD
 	<div class="col-md-12">
         <div class="margin-none">
             <h2> Nuevo Profesional </h2>
         </div>	
     <h1>Tecnologia creation</h1>
+=======
+    <h1>HardSkills creation</h1>
+>>>>>>> 1a67f3dfae01b4250e8258467d566c2154b4bbdb
 
-    {{ form(form) }}
-
-        <ul class="record_actions">
-    <li>
-        <a href="{{ path('tecnologia') }}">
-            Back to the list
-        </a>
-    </li>
-</ul>
+	{{ form_start(form) }}
+				
+			<div class="form-group">
+				Name
+				{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Name'} }) }}
+				<span class = "text-danger"> {{ form_errors(form.nombre) }} </span>
+			</div>
+			
+	     
+		   {{ form_widget(form.submit, {'label' : 'Save', 'attr' : {'class' : 'btn btn-success' }} ) }}
+		        <a href="{{ path('tecnologia') }}" class="btn btn-info">
+		            Back to the list
+		        </a>
+	{{ form_end(form) }}	    
+</div>
 {% endblock %}

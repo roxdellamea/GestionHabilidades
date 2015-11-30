@@ -7,22 +7,22 @@
 <div class="container">
 	<div class="col-md-12">
         <div class="margin-none">
-            <h2> Nuevo Proyecto </h2>
+            <h2> New Mision </h2>
         </div>	
     
 		{{ form_start(form) }}
 			<div class="form-group">
-				Nombre
-				{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Nombre'} }) }}
+				Name
+				{{ form_widget(form.nombre, {'attr' : {'class' : 'form-control', 'placeholder' : 'Name'} }) }}
 				<span class = "text-danger"> {{ form_errors(form.nombre) }} </span>
 			</div>
 			<div class="form-group">
-					Descripción
-					{{ form_widget(form.descripcion, {'attr' : {'class' : 'form-control', 'placeholder' : 'Descripción del proyecto'} }) }}
+					Description
+					{{ form_widget(form.descripcion, {'attr' : {'class' : 'form-control', 'placeholder' : 'About of the mision'} }) }}
 					<span class = "text-danger"> {{ form_errors(form.descripcion) }} </span>
 			</div>
 				
-			<p>{{ form_widget(form.submit, {'label' : 'Guardar', 'attr' : {'class' : 'btn btn-success' }} ) }} 
+			<p>{{ form_widget(form.submit, {'label' : 'Save', 'attr' : {'class' : 'btn btn-success' }} ) }} 
 				<a href="{{ path('proyecto') }}" class="btn btn-info">
 	            Back to the list
 	    		</a>

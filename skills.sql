@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2015 a las 01:13:44
+-- Tiempo de generación: 30-11-2015 a las 14:05:37
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -68,6 +68,24 @@ CREATE TABLE `califtecnologias` (
   `tecnologia_id` int(11) DEFAULT NULL,
   `nota` enum('1','2','3','4','5') COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `califtecnologias`
+--
+
+INSERT INTO `califtecnologias` (`id`, `mes_id`, `dni_id`, `tecnologia_id`, `nota`) VALUES
+(1, 4, 2, 1, '3'),
+(2, 4, 2, 2, '1'),
+(3, 4, 2, 3, '2'),
+(4, 4, 2, 4, '5'),
+(5, 4, 2, 5, '3'),
+(6, 4, 2, 6, '1'),
+(7, 4, 2, 7, '2'),
+(8, 4, 2, 8, '3'),
+(9, 4, 2, 9, '4'),
+(10, 4, 2, 10, '3'),
+(11, 4, 2, 11, '2'),
+(12, 4, 2, 12, '5');
 
 -- --------------------------------------------------------
 
@@ -150,7 +168,9 @@ CREATE TABLE `profesionales` (
 
 INSERT INTO `profesionales` (`id`, `nombre`, `apellido`, `dni`, `email`, `telefono`, `linkedin`) VALUES
 (2, 'Oscar', 'Franco', 32777000, 'oscarfranco@mail.com', '3232323', 'oscarfranco'),
-(3, 'Roxana', 'Dellamea', 31444466, 'roxd@mail.com', '121212', 'rox');
+(3, 'Roxana', 'Dellamea', 31444466, 'roxd@mail.com', '121212', 'roxdellamea'),
+(4, 'Valeria', 'Fralasco', 32457987, 'valefra@gmail.com', '362489095', 'no tiene'),
+(5, 'Soledad', 'Barrios', 32235987, 'solebarrios@gmail.com', '362475941', 'soledadbarrios.com');
 
 -- --------------------------------------------------------
 
@@ -230,7 +250,15 @@ INSERT INTO `tecnologias` (`id`, `nombre`) VALUES
 (1, 'Especificación de requerimientos'),
 (2, 'Programación en .NET C#'),
 (3, 'Programación en Java'),
-(4, 'Programación en PHP');
+(4, 'Programación en PHP'),
+(5, 'Diagrama E/R'),
+(6, 'Casos de Uso'),
+(7, 'Casos de prueba'),
+(8, 'Programación en Java para Android'),
+(9, 'Lenguaje SQL avanzado'),
+(10, 'Administración de Bases de Datos.'),
+(11, 'Tuning de Bases de datos.'),
+(12, 'Manejo de Redes y conectividad');
 
 -- --------------------------------------------------------
 
@@ -335,7 +363,7 @@ ALTER TABLE `califcompetencias`
 -- AUTO_INCREMENT de la tabla `califtecnologias`
 --
 ALTER TABLE `califtecnologias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `competencias`
 --
@@ -350,7 +378,7 @@ ALTER TABLE `meses`
 -- AUTO_INCREMENT de la tabla `profesionales`
 --
 ALTER TABLE `profesionales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `proyectos`
 --
@@ -370,7 +398,7 @@ ALTER TABLE `requeridos`
 -- AUTO_INCREMENT de la tabla `tecnologias`
 --
 ALTER TABLE `tecnologias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --

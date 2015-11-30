@@ -187,9 +187,17 @@ class Usuario
         return $this->tipo;
     }
 
+<<<<<<< HEAD
     public function __toString()
     {
         return strval($this->nommbre);
     }
+=======
+
+    public function __toString()
+   {
+       return strval($this->nombre);
+   }
+>>>>>>> 1a67f3dfae01b4250e8258467d566c2154b4bbdb
 }
 
