@@ -19,7 +19,6 @@ class CalifcompetenciaType extends AbstractType
             ->add('mes')
             ->add('competencia')
             ->add('nota', 'choice', array('choices'=> array('NE' => 'NE', '1' => '1','2' => '2', '3' => '3'), 'placeholder' => 'Seleccionar'))
-            ->add('actividad')
         ;
     }
     
