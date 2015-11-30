@@ -104,10 +104,12 @@ class ProfesionalController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         $califcompetencias = $entity->getCalifcompetencia();
+        $califtecnologias = $entity->getCaliftecnologia();
 
         return $this->render('GestionHabilidadesBundle:Profesional:show.html.twig', array(
             'entity'      => $entity,
             'califcs'      => $califcompetencias,
+            'califts'     => $califtecnologias,
             'delete_form' => $deleteForm->createView(),
         ));
     }

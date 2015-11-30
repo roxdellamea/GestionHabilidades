@@ -4,41 +4,44 @@
     <div class="container">
         <div class="col-md-12">
             <div class="margin-none">
-                <h1>Tecnologias</h1>
+                <h1>Proyecto</h1>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th>Id</th>
+                            <th></th>
                             <th>Nombre</th>
+                            <th>Descripcion</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                     {% for entity in entities %}
                         <tr>
-                            <td><a href="{{ path('tecnologia_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                            <td><a href="{{ path('proyecto_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
                             <td>{{ entity.nombre }}</td>
+                            <td>{{ entity.descripcion }}</td>
                             <td>
-                            
-                                    <a href="{{ path('tecnologia_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
-                             
-                                    <a href="{{ path('tecnologia_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
                            
+                                    <a href="{{ path('proyecto_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                               
+                                    <a href="{{ path('proyecto_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
+                         
                             </td>
                         </tr>
                     {% endfor %}
                     </tbody>
                 </table>
 
-                    <ul>
-                    <li>
-                        <a href="{{ path('tecnologia_new') }}">
-                            Create a new entry
-                        </a>
-                    </li>
+                <ul>
+                <li>
+                    <a href="{{ path('proyecto_new') }}">
+                        Create a new entry
+                    </a>
+                </li>
                 </ul>
+            </div>
         </div>
     </div>
-    {% endblock %}
+{% endblock %}

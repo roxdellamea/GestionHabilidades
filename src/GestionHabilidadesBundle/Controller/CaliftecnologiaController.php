@@ -44,7 +44,7 @@ class CaliftecnologiaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('califtecnologia_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('califtecnologia_new', array('id' => $entity->getId())));
         }
 
         return $this->render('GestionHabilidadesBundle:Califtecnologia:new.html.twig', array(

@@ -44,7 +44,7 @@ class TecnologiaController extends Controller
             $em->persist($entity);
             $em->flush();
 
-            return $this->redirect($this->generateUrl('tecnologia_show', array('id' => $entity->getId())));
+            return $this->redirect($this->generateUrl('tecnologia_new', array('id' => $entity->getId())));
         }
 
         return $this->render('GestionHabilidadesBundle:Tecnologia:new.html.twig', array(

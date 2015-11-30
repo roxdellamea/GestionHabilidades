@@ -227,4 +227,26 @@ class ProyectoController extends Controller
             ->getForm()
         ;
     }
+
+    public function searchAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $proyecto = $em->getRepository('GestionHabilidadesBundle:Proyecto')->find($id);
+
+        if (!$proyecto) {
+            throw $this->createNotFoundException('Unable to find Proyecto entity.');
+        }
+
+        $requeridos = $proyecto->getRequerido();
+
+        foreach($requeridos as $req)
+        {
+            echo $req;
+        }
+
+        return $this->render('GestionHabilidadesBundle:Proyecto:show.html.twig', array(
+            'proyecto'      => $proyecto,
+        ));
+    }
 }
